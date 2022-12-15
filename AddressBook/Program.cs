@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AddressBook;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,22 @@ namespace AddressBook
         {
             addressbook book = new addressbook();
             book.CreateContact();
+            while (true)
+            {
+                Console.WriteLine("1Create Contact\n2DisplayContact");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        book.CreateContact();
+                        break;
+                    case 2:
+                        book.DisplayContact();
+                        break;
+                    
+                }
+
+            }
         }
     }
 }
