@@ -114,10 +114,30 @@ namespace AddressBook
                 }
 
             }
-
-
-
-
         }
+
+        public void DeleteContact()
+        {
+            Console.WriteLine(" Delete a Contact From Address Book Enter FirstName Of Person");
+            string name = Console.ReadLine();
+            foreach (var record in data.ToList())
+            {
+                if (record.Firstname == name)
+                {
+                    data.Remove(record);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Person Details Delete Succesfully");
+                    Console.ResetColor();
+
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Given Name Does not Exist in Address Book");
+                    Console.ResetColor();
+                }
+            }
+        }
+
     }
 }
